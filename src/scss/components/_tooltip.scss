@@ -1,0 +1,37 @@
+@import "../shyle";
+
+.shyle-tooltip {
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  z-index: 1060;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+
+  &.shyle-tooltip-top,
+  &.shyle-tooltip-bottom,
+  &.shyle-tooltip-left,
+  &.shyle-tooltip-right {
+    opacity: 1;
+  }
+
+  &.shyle-tooltip-top {
+    transform: translateY(-5px);
+  }
+
+  &.shyle-tooltip-bottom {
+    transform: translateY(5px);
+  }
+
+  &.shyle-tooltip-left {
+    transform: translateX(-5px);
+  }
+
+  &.shyle-tooltip-right {
+    transform: translateX(5px);
+  }
+}

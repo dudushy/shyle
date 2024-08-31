@@ -1,0 +1,33 @@
+{
+  "name": "shyle",
+  "description": "Shyle is a modern, responsive CSS framework with custom JavaScript components, similar to Bootstrap. It offers enhanced features and flexibility for building web interfaces.",
+  "version": "0.0.1",
+  "author": "dudushy",
+  "maintainers": [
+    "dudushy",
+    "Yargs444"
+  ],
+  "homepage": "https://github.com/dudushy/shyle",
+  "main": "dist/index.js",
+  "style": "dist/shyle.css",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build:scss": "sass src/scss/shyle.scss dist/shyle.css",
+    "build:ts": "tsc",
+    "build:js": "parcel build src/ts/index.ts --out-dir dist --target node",
+    "build": "npm run build:scss && npm run build:ts && npm run build:js",
+    "watch": "parcel watch src/ts/index.ts --out-dir dist"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "parcel": "^2.0.0",
+    "sass": "^1.32.0",
+    "typescript": "^4.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.0.0",
+    "@types/bootstrap": "^5.0.0"
+  }
+}
