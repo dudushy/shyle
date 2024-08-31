@@ -78,9 +78,9 @@ Contributions are welcome! We appreciate your interest in improving Shyle. Pleas
 
 ### Prerequisites
 
-Make sure you have Node.js installed. The project requires Node.js `v20.11.0` or higher.
+Make sure you have Node.js installed. The project requires Node.js `v20.17.0` or higher.
 
-- [Download Node.js `v20.11.0`](https://nodejs.org/download/release/v20.11.0/)
+- [Download Node.js `v20.17.0`](https://nodejs.org/download/release/v20.17.0/)
 
 ### 1. Fork and Clone the Repository
 
