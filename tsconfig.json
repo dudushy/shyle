@@ -6,8 +6,11 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist",
-    "declaration": true
+    "sourceMap": false,
+    "declaration": true,
+    "outDir": "dist",
+    "lib": ["DOM", "ES6"],
+    "moduleResolution": "node"
   },
-  "include": ["src/**/*"]
+  "include": ["src/ts/**/*"]
 }
