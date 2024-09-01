@@ -15,13 +15,7 @@
   <a href="https://dudushy.github.io/shyle/demo">Demo</a>
 </p>
 
----
-
 ![stars][stars] ![watchers][watchers] ![forks][forks] ![issues][issues] ![pull_requests][pull_requests] ![branches][branches]
-
-# Shyle
-
-A modern, responsive CSS framework with custom JavaScript components, inspired by Bootstrap.
 
 ---
 
