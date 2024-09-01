@@ -2,7 +2,7 @@
 
 # Shyle
 
-Shyle is a modern, responsive CSS framework with custom JavaScript components, inspired by Bootstrap. It offers enhanced features, flexibility, and simplicity for building web interfaces. Whether you're building a small project or a large-scale application, Shyle provides the tools you need to create beautiful, responsive layouts with ease.
+A modern, responsive CSS framework with custom JavaScript components, inspired by Bootstrap.
 
 ---
 
