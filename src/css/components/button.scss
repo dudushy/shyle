@@ -1,9 +1,22 @@
 @import "../utils";
 
-.btn {
-  @include button-style($primary-color);
+@mixin button-style($class-name, $color) {
+  .#{$class-name} {
+    background-color: $color;
+    border: none;
+    color: $shy-color-light;
+    padding-block: calc(var(--shy-responsive-unit) * 0.25);
+    padding-inline: calc(var(--shy-responsive-unit) * 0.55);
+    border-radius: calc(var(--shy-responsive-unit) * 0.2);
+    text-align: center;
+    font-size: var(--shy-responsive-unit);
+
+    &:hover {
+      background-color: darken($color, 10%);
+    }
+  }
 }
 
-.btn-secondary {
-  @include button-style($secondary-color);
-}
+// Applying the mixin to specific classes
+@include button-style("shy-btn", $shy-color-primary);
+@include button-style("shy-btn-secondary", $shy-color-secondary);

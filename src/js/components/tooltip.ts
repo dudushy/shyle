@@ -2,19 +2,16 @@ const TITLE = 'tooltip';
 
 interface TooltipOptions {
   selector: string;
-  placement: 'top' | 'bottom' | 'left' | 'right';
 }
 
 class Tooltip {
   private elements: NodeListOf<HTMLElement>;
-  private placement: string;
 
   constructor(options: TooltipOptions) {
     const SCOPE = 'constructor';
     console.log(`[${TITLE}#${SCOPE}]`);
 
     this.elements = document.querySelectorAll(options.selector);
-    this.placement = options.placement;
 
     this.bindEvents();
   }
@@ -33,13 +30,16 @@ class Tooltip {
     const SCOPE = 'show';
     console.log(`[${TITLE}#${SCOPE}]`);
 
-    const tooltipText = element.getAttribute('data-tooltip');
+    const tooltipText = element.getAttribute('data-tooltip-text');
     console.log(`[${TITLE}#${SCOPE}] tooltipText`, tooltipText);
 
     if (!tooltipText) return;
 
+    const tooltipPlacement = element.getAttribute('data-tooltip-placement') || 'top';
+    console.log(`[${TITLE}#${SCOPE}] tooltipPlacement`, tooltipPlacement);
+
     const tooltip = document.createElement('div');
-    tooltip.className = `shyle-tooltip shyle-tooltip-${this.placement}`;
+    tooltip.className = `shy-tooltip shy-tooltip-${tooltipPlacement}`;
     tooltip.innerText = tooltipText;
     document.body.appendChild(tooltip);
 
@@ -49,7 +49,7 @@ class Tooltip {
     let top = 0;
     let left = 0;
 
-    switch (this.placement) {
+    switch (tooltipPlacement) {
       case 'top':
         top = rect.top - tooltipRect.height - 8;
         left = rect.left + (rect.width - tooltipRect.width) / 2;

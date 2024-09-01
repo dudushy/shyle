@@ -1,37 +1,37 @@
 @import "../utils";
 
-.shyle-tooltip {
+.shy-tooltip {
   position: absolute;
-  background-color: #333;
-  color: #fff;
-  padding: 0.5rem;
-  border-radius: 0.25rem;
-  font-size: 0.875rem;
+  background-color: $shy-color-dark;
+  color: $shy-color-light;
+  padding: calc(var(--shy-responsive-unit) * 0.3);
+  border-radius: calc(var(--shy-responsive-unit) * 0.2);
+  font-size: calc(var(--shy-responsive-unit) * 0.5);
   z-index: 1060;
   white-space: nowrap;
   opacity: 0;
   transition: opacity 0.2s;
 
-  &.shyle-tooltip-top,
-  &.shyle-tooltip-bottom,
-  &.shyle-tooltip-left,
-  &.shyle-tooltip-right {
+  &.shy-tooltip-top,
+  &.shy-tooltip-bottom,
+  &.shy-tooltip-left,
+  &.shy-tooltip-right {
     opacity: 1;
   }
 
-  &.shyle-tooltip-top {
-    transform: translateY(-5px);
+  &.shy-tooltip-top {
+    transform: translateY(calc(var(--shy-responsive-unit) * 0.125));
   }
 
-  &.shyle-tooltip-bottom {
-    transform: translateY(5px);
+  &.shy-tooltip-bottom {
+    transform: translateY(calc(var(--shy-responsive-unit) * -0.125));
   }
 
-  &.shyle-tooltip-left {
-    transform: translateX(-5px);
+  &.shy-tooltip-left {
+    transform: translateX(calc(var(--shy-responsive-unit) * 0.125));
   }
 
-  &.shyle-tooltip-right {
-    transform: translateX(5px);
+  &.shy-tooltip-right {
+    transform: translateX(calc(var(--shy-responsive-unit) * -0.125));
   }
 }

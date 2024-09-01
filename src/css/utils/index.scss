@@ -1,2 +1,98 @@
-@import "variables";
-@import "mixins";
+// Breakpoint Handling
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+@mixin breakpoint($size: xs) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+// Size Mixins
+@mixin fixedSize($property, $value) {
+  #{$property}: $value;
+  min-#{$property}: $value;
+  max-#{$property}: $value;
+}
+
+@mixin fixedHeight($height) {
+  @include fixed-size(height, $height);
+}
+
+@mixin fixedWidth($width) {
+  @include fixed-size(width, $width);
+}
+
+@mixin fixedSquare($size) {
+  @include fixedHeight($size);
+  @include fixedWidth($size);
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+// Vendor Prefix Mixin
+@mixin allVendors($property, $args...) {
+  @each $prefix in ("-webkit-", "-moz-", "-ms-", "-o-", "") {
+    #{$prefix + $property}: $args;
+  }
+}
+
+// Color Variables
+$shy-color-primary: #1eb5eb;
+$shy-color-secondary: #1bdbdc;
+$shy-color-tertiary: #bd42b7;
+$shy-color-light: #c5d0dc;
+$shy-color-medium: #4b4d5c;
+$shy-color-dark: #28283a;
+$shy-color-success: #28a745;
+$shy-color-warning: #ffc107;
+$shy-color-danger: #dc3545;
+$shy-color-info: #17a2b8;
+
+// Root Variables Output
+:root {
+  // Color variables
+  --shy-color-primary: #1eb5eb;
+  --shy-color-secondary: #1bdbdc;
+  --shy-color-tertiary: #bd42b7;
+  --shy-color-light: #c5d0dc;
+  --shy-color-medium: #4b4d5c;
+  --shy-color-dark: #28283a;
+  --shy-color-success: #28a745;
+  --shy-color-warning: #ffc107;
+  --shy-color-danger: #dc3545;
+  --shy-color-info: #17a2b8;
+
+  // Responsive unit
+  --shy-responsive-unit: calc(1vmin + 1vmax + 1rem);
+
+  // Font family
+  --shy-font-family: "Roboto", sans-serif;
+
+  // Dynamic height
+  @supports (height: 100dvh) {
+    --shy-dynamic-height: 100dvh;
+  }
+
+  & {
+    --shy-dynamic-height: 100vh;
+  }
+
+  // Dynamic width
+  @supports (width: 100dvw) {
+    --shy-dynamic-width: 100dvw;
+  }
+
+  & {
+    --shy-dynamic-width: 100vw;
+  }
+}

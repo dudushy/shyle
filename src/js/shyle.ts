@@ -8,16 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const SCOPE = 'DOMContentLoaded';
 
   const modal = new Modal({
-    triggerSelector: '.shyle-modal-trigger',
-    modalSelector: '#shyleModal',
-    closeSelector: '.shyle-modal-close'
+    triggerSelector: '.shy-modal-trigger',
+    modalSelector: '#shyModal',
+    closeSelector: '.shy-modal-close'
   });
   console.log(`[${TITLE}#${SCOPE}] modal`, modal);
 
   // Initialize Tooltip
   const tooltip = new Tooltip({
-    selector: '[data-tooltip]',
-    placement: 'top' // can be 'top', 'bottom', 'left', 'right'
+    selector: '[data-tooltip-text]'
   });
   console.log(`[${TITLE}#${SCOPE}] tooltip`, tooltip);
 });

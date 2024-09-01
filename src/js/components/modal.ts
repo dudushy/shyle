@@ -48,7 +48,7 @@ class Modal {
     console.log(`[${TITLE}#${SCOPE}]`);
 
     if (this.modal) {
-      this.modal.classList.add('shyle-modal-open');
+      this.modal.classList.add('shy-modal-open');
     }
   }
 
@@ -57,7 +57,7 @@ class Modal {
     console.log(`[${TITLE}#${SCOPE}]`);
 
     if (this.modal) {
-      this.modal.classList.remove('shyle-modal-open');
+      this.modal.classList.remove('shy-modal-open');
     }
   }
 }

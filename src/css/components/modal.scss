@@ -1,6 +1,6 @@
 @import "../utils";
 
-.shyle-modal {
+.shy-modal {
   display: none;
   position: fixed;
   z-index: 1050;
@@ -10,21 +10,21 @@
   height: 100%;
   overflow: hidden;
   outline: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  &.shyle-modal-open {
+  background-color: transparentize($color: $shy-color-dark, $amount: 0.5);
+  &.shy-modal-open {
     display: block;
   }
 
-  .shyle-modal-dialog {
+  .shy-modal-dialog {
     position: relative;
     margin: 10% auto;
     max-width: 500px;
-    background: #fff;
+    background: $shy-color-light;
     padding: 1rem;
     border-radius: 0.3rem;
   }
 
-  .shyle-modal-close {
+  .shy-modal-close {
     position: absolute;
     top: 0.5rem;
     right: 1rem;
