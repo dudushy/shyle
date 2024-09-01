@@ -45,12 +45,6 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Copy assets to docs folder
-        run: |
-          mkdir -p docs/assets/shyle
-          cp dist/scss/shyle.css docs/assets/shyle/shyle.css
-          cp dist/ts/shyle.js docs/assets/shyle/shyle.js
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
