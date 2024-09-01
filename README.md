@@ -27,7 +27,7 @@ Include Shyle directly from a CDN in your HTML file:
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shyle@0.1.0/dist/shyle.css">
 
 <!-- JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/shyle@0.1.0/dist/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/shyle@0.1.0/dist/shyle.js"></script>
 ```
 
 ---
@@ -103,25 +103,35 @@ This ensures you install exactly the same dependencies as in the `package-lock.j
 
 ### 3. Start Development
 
-You can start a development server and watch for file changes with:
+You can start watching for file changes in your TypeScript and SCSS files with:
 
 ```bash
 npm run watch
 ```
 
-This command will watch for changes in your TypeScript and SCSS files, automatically compiling them to the `dist` directory.
+This command will watch for changes in your TypeScript and SCSS files and automatically compile them to the `dist` directory.
 
 ### 4. Build the Project
 
-To build the project, run:
+To build the project for production, run:
 
 ```bash
 npm run build
 ```
 
-This will compile the SCSS and TypeScript files into the `dist` directory.
+This will compile the SCSS and TypeScript files into the `dist` directory, optimized for production.
 
-### 5. Test Your Changes
+### 5. Clean the Build
+
+If you need to clean the build artifacts, run:
+
+```bash
+npm run clean
+```
+
+This will remove the `dist` directory and Parcel cache.
+
+### 6. Test Your Changes
 
 Create a simple HTML file to test your changes:
 
@@ -137,18 +147,18 @@ Create a simple HTML file to test your changes:
 </head>
 
 <body>
+    <!-- Your Shyle components here -->
 
-<!-- Your Shyle components here -->
-
-<script src="../dist/index.js"></script>
+    <script src="../dist/shyle.js"></script>
 </body>
 
 </html>
+
 ```
 
 Open this file in your browser to test your changes.
 
-### 6. Submit a Pull Request
+### 7. Submit a Pull Request
 
 Once you’ve made your changes, commit them to your fork, push to your repository, and create a pull request. Be sure to provide a clear description of the changes you’ve made and why they’re beneficial to the project.
 

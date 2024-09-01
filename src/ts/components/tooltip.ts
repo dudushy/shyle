@@ -1,3 +1,5 @@
+const TITLE = 'tooltip';
+
 interface TooltipOptions {
   selector: string;
   placement: 'top' | 'bottom' | 'left' | 'right';
@@ -8,6 +10,9 @@ class Tooltip {
   private placement: string;
 
   constructor(options: TooltipOptions) {
+    const SCOPE = 'constructor';
+    console.log(`[${TITLE}#${SCOPE}]`);
+
     this.elements = document.querySelectorAll(options.selector);
     this.placement = options.placement;
 
@@ -15,6 +20,9 @@ class Tooltip {
   }
 
   private bindEvents() {
+    const SCOPE = 'bindEvents';
+    console.log(`[${TITLE}#${SCOPE}]`);
+
     this.elements.forEach(element => {
       element.addEventListener('mouseenter', (e) => this.show(e, element));
       element.addEventListener('mouseleave', () => this.hide(element));
@@ -22,7 +30,12 @@ class Tooltip {
   }
 
   private show(event: MouseEvent, element: HTMLElement) {
+    const SCOPE = 'show';
+    console.log(`[${TITLE}#${SCOPE}]`);
+
     const tooltipText = element.getAttribute('data-tooltip');
+    console.log(`[${TITLE}#${SCOPE}] tooltipText`, tooltipText);
+
     if (!tooltipText) return;
 
     const tooltip = document.createElement('div');
@@ -62,6 +75,9 @@ class Tooltip {
   }
 
   private hide(element: HTMLElement) {
+    const SCOPE = 'hide';
+    console.log(`[${TITLE}#${SCOPE}]`);
+
     const tooltipId = element.getAttribute('data-tooltip-id');
     if (tooltipId) {
       const tooltip = document.getElementById(tooltipId);

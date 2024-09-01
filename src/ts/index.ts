@@ -1,7 +1,7 @@
+const TITLE = 'index';
+
 import Modal from './components/modal';
 import Tooltip from './components/tooltip';
-
-const TITLE = 'index';
 
 // Initialize Modal
 document.addEventListener('DOMContentLoaded', () => {

@@ -1,3 +1,5 @@
+const TITLE = 'modal';
+
 interface ModalOptions {
   triggerSelector: string;
   modalSelector: string;
@@ -10,6 +12,9 @@ class Modal {
   private closeButton: HTMLElement | null;
 
   constructor(options: ModalOptions) {
+    const SCOPE = 'constructor';
+    console.log(`[${TITLE}#${SCOPE}]`);
+
     this.triggerElements = document.querySelectorAll(options.triggerSelector);
     this.modal = document.querySelector(options.modalSelector);
     this.closeButton = document.querySelector(options.closeSelector);
@@ -18,6 +23,9 @@ class Modal {
   }
 
   private bindEvents() {
+    const SCOPE = 'bindEvents';
+    console.log(`[${TITLE}#${SCOPE}]`);
+
     this.triggerElements.forEach(trigger => {
       trigger.addEventListener('click', () => this.open());
     });
@@ -36,12 +44,18 @@ class Modal {
   }
 
   private open() {
+    const SCOPE = 'open';
+    console.log(`[${TITLE}#${SCOPE}]`);
+
     if (this.modal) {
       this.modal.classList.add('shyle-modal-open');
     }
   }
 
   private close() {
+    const SCOPE = 'close';
+    console.log(`[${TITLE}#${SCOPE}]`);
+
     if (this.modal) {
       this.modal.classList.remove('shyle-modal-open');
     }
