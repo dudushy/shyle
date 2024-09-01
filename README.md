@@ -1,3 +1,22 @@
+<p align="center">
+  <a href="https://github.com/dudushy/shyle">
+    <img src="./assets/shyle-icon.png" alt="Shyle logo" width="200" height="200">
+  </a>
+</p>
+
+<h3 align="center">Shyle</h3>
+
+<p align="center">
+  A modern, responsive CSS framework with custom JavaScript components, inspired by Bootstrap.
+  <br>
+  <br>
+  <a href="https://dudushy.github.io/shyle">Documentation</a>
+  ·
+  <a href="https://dudushy.github.io/shyle/demo">Demo</a>
+</p>
+
+---
+
 ![stars][stars] ![watchers][watchers] ![forks][forks] ![issues][issues] ![pull_requests][pull_requests] ![branches][branches]
 
 # Shyle
