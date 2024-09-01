@@ -153,20 +153,25 @@ Create a simple HTML file to test your changes:
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Shyle Test</title>
-    <link rel="stylesheet" href="../dist/shyle.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Shyle - Test</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="../dist/scss/shyle.css">
 </head>
 
 <body>
-    <!-- Your Shyle components here -->
+  <!-- Your Shyle components here -->
 
-    <script src="../dist/shyle.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../dist/ts/shyle.js"></script>
 </body>
 
 </html>
-
 ```
 
 Open this file in your browser to test your changes.
