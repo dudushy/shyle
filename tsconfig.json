@@ -12,5 +12,5 @@
     "lib": ["DOM", "ES6"],
     "moduleResolution": "node"
   },
-  "include": ["src/ts/**/*"]
+  "include": ["src/js/**/*"]
 }

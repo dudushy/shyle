@@ -4,5 +4,5 @@
 mkdir -p docs/assets/shyle
 
 # Copy the compiled files to the docs directory
-cp dist/scss/shyle.css docs/assets/shyle/shyle.css
-cp dist/ts/shyle.js docs/assets/shyle/shyle.js
+cp dist/css/shyle.css docs/assets/shyle/css/shyle.css
+cp dist/js/shyle.js docs/assets/shyle/js/shyle.js
