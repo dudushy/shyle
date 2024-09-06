@@ -1,18 +1,18 @@
 <p align="center">
-  <a href="https://github.com/dudushy/shyle">
-    <img src="./assets/shyle-icon.png" alt="Shyle logo" width="200" height="200">
-  </a>
+    <a href="https://github.com/dudushy/shyle">
+        <img src="./assets/shyle-icon.png" alt="Shyle logo" width="200" height="200">
+    </a>
 </p>
 
 <h3 align="center">Shyle</h3>
 
 <p align="center">
-  A modern, responsive CSS framework with custom JavaScript components, inspired by Bootstrap.
-  <br>
-  <br>
-  <a href="https://dudushy.github.io/shyle">Documentation</a>
-  ·
-  <a href="https://dudushy.github.io/shyle/demo">Demo</a>
+    A modern, responsive CSS framework with custom JavaScript components, inspired by Bootstrap.
+    <br>
+    <br>
+    <a href="https://dudushy.github.io/shyle">Documentation</a>
+    ·
+    <a href="https://dudushy.github.io/shyle/demo">Demo</a>
 </p>
 
 ![stars][stars] ![watchers][watchers] ![forks][forks] ![issues][issues] ![pull_requests][pull_requests] ![branches][branches]
@@ -37,10 +37,10 @@ Include Shyle directly from a CDN in your HTML file:
 
 ```html
 <!-- CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shyle@0.1.0/dist/shyle.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dudushy/shyle/dist/css/shyle.min.css">
 
 <!-- JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/shyle@0.1.0/dist/shyle.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/dudushy/shyle/dist/js/shyle.min.js"></script>
 ```
 
 ---
@@ -63,12 +63,13 @@ Shyle includes interactive components like Modals and Tooltips. To use them, inc
 
 ```html
 <!-- Modal Trigger -->
-<button class="btn shyle-modal-trigger">Open Modal</button>
+<button class="btn shy-modal-trigger">Open Modal</button>
 
 <!-- Modal Structure -->
-<div id="shyleModal" class="shyle-modal">
-    <div class="shyle-modal-dialog">
-        <button class="shyle-modal-close">&times;</button>
+<div id="shyleModal" class="shy-modal">
+    <div class="shy-modal-dialog">
+        <button class="shy-modal-close">&times;</button>
+
         <p>This is a modal!</p>
     </div>
 </div>
@@ -81,7 +82,7 @@ Shyle includes interactive components like Modals and Tooltips. To use them, inc
 <button class="btn" data-tooltip="This is a tooltip!">Hover me</button>
 ```
 
-The modal and tooltip components are automatically initialized when the DOM is loaded. You can customize their behavior by modifying the data attributes or extending the JavaScript classes provided in the `src/ts/components` directory.
+The modal and tooltip components are automatically initialized when the DOM is loaded. You can customize their behavior by modifying the data attributes or extending the JavaScript classes provided in the `src/js/components` directory.
 
 ---
 
@@ -146,31 +147,29 @@ This will remove the `dist` directory and Parcel cache.
 
 ### 6. Test Your Changes
 
-Create a simple HTML file to test your changes:
+Create a simple HTML file inside the `test` directory to test your changes:
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Shyle - Test</title>
 
-  <title>Shyle - Test</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../dist/css/shyle.css">
+    </head>
 
-  <link rel="stylesheet" href="../dist/scss/shyle.css">
-</head>
+    <body>
+        <!-- Your Shyle components here -->
 
-<body>
-  <!-- Your Shyle components here -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script src="../dist/ts/shyle.js"></script>
-</body>
-
+        <script src="../dist/js/shyle.js"></script>
+    </body>
 </html>
 ```
 
