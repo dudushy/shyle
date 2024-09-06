@@ -7,7 +7,7 @@
   padding: calc(var(--shy-responsive-unit) * 0.3);
   border-radius: calc(var(--shy-responsive-unit) * 0.2);
   font-size: calc(var(--shy-responsive-unit) * 0.5);
-  z-index: calc(1337 + 1);
+  z-index: calc(1337 + 0);
   white-space: nowrap;
   opacity: 0;
   @include allVendors(transition, opacity 0.2s);
