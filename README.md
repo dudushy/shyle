@@ -37,10 +37,10 @@ Include Shyle directly from a CDN in your HTML file:
 
 ```html
 <!-- CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dudushy/shyle/dist/css/shyle.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dudushy/shyle/dist/css/shyle.css">
 
 <!-- JavaScript -->
-<script src="https://cdn.jsdelivr.net/gh/dudushy/shyle/dist/js/shyle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/dudushy/shyle/dist/js/shyle.js"></script>
 ```
 
 ---
@@ -63,14 +63,14 @@ Shyle includes interactive components like Modals and Tooltips. To use them, inc
 
 ```html
 <!-- Modal Trigger -->
-<button class="btn shy-modal-trigger">Open Modal</button>
+<button class="shy-btn" data-shy-modal-target="#shyModal1">Open Modal</button>
 
 <!-- Modal Structure -->
-<div id="shyleModal" class="shy-modal">
+<div id="shyModal1" class="shy-modal">
     <div class="shy-modal-dialog">
         <button class="shy-modal-close">&times;</button>
-
-        <p>This is a modal!</p>
+        
+        <p>This is modal 1!</p>
     </div>
 </div>
 ```
