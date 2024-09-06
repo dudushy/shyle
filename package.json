@@ -11,9 +11,10 @@
   "license": "MIT",
   "scripts": {
     "start": "npm run watch",
-    "watch": "npm run clean && parcel watch src/js/shyle.ts src/css/shyle.scss --dist-dir dist --no-source-maps",
-    "build": "npm run clean && parcel build src/js/shyle.ts src/css/shyle.scss --dist-dir dist --no-source-maps",
-    "clean": "rm -rf dist .parcel-cache"
+    "watch": "npm run clean:watch && parcel watch src/js/shyle.ts src/css/shyle.scss --dist-dir dist-debug --no-source-maps",
+    "build": "npm run clean:build && parcel build src/js/shyle.ts src/css/shyle.scss --dist-dir dist --no-source-maps",
+    "clean:watch": "rm -rf dist-debug .parcel-cache",
+    "clean:build": "rm -rf dist .parcel-cache"
   },
   "files": [
     "dist"
