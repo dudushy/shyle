@@ -1,4 +1,4 @@
-@import "../utils";
+@import "../utilities";
 
 .shy-tooltip {
   position: absolute;
@@ -7,10 +7,10 @@
   padding: calc(var(--shy-responsive-unit) * 0.3);
   border-radius: calc(var(--shy-responsive-unit) * 0.2);
   font-size: calc(var(--shy-responsive-unit) * 0.5);
-  z-index: 1060;
+  z-index: calc(1337 + 0);
   white-space: nowrap;
   opacity: 0;
-  transition: opacity 0.2s;
+  @include allVendors(transition, opacity 0.2s);
 
   &.shy-tooltip-top,
   &.shy-tooltip-bottom,

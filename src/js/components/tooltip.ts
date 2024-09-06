@@ -6,12 +6,20 @@ interface TooltipOptions {
 
 class Tooltip {
   private elements: NodeListOf<HTMLElement>;
+  private tooltip: HTMLDivElement | null = null;
 
   constructor(options: TooltipOptions) {
     const SCOPE = 'constructor';
     console.log(`[${TITLE}#${SCOPE}]`);
 
     this.elements = document.querySelectorAll(options.selector);
+
+    // Create a single tooltip element
+    this.tooltip = document.createElement('div');
+    this.tooltip.className = 'shy-tooltip';
+    this.tooltip.style.position = 'absolute';
+    this.tooltip.style.visibility = 'hidden';
+    document.body.appendChild(this.tooltip);
 
     this.bindEvents();
   }
@@ -22,7 +30,7 @@ class Tooltip {
 
     this.elements.forEach(element => {
       element.addEventListener('mouseenter', (e) => this.show(e, element));
-      element.addEventListener('mouseleave', () => this.hide(element));
+      element.addEventListener('mouseleave', () => this.hide());
     });
   }
 
@@ -30,21 +38,20 @@ class Tooltip {
     const SCOPE = 'show';
     console.log(`[${TITLE}#${SCOPE}]`);
 
-    const tooltipText = element.getAttribute('data-tooltip-text');
+    const tooltipText = element.getAttribute('data-shy-tooltip');
     console.log(`[${TITLE}#${SCOPE}] tooltipText`, tooltipText);
 
-    if (!tooltipText) return;
+    if (!tooltipText || !this.tooltip) return;
 
-    const tooltipPlacement = element.getAttribute('data-tooltip-placement') || 'top';
+    const tooltipPlacement = element.getAttribute('data-shy-tooltip-placement') || 'top';
     console.log(`[${TITLE}#${SCOPE}] tooltipPlacement`, tooltipPlacement);
 
-    const tooltip = document.createElement('div');
-    tooltip.className = `shy-tooltip shy-tooltip-${tooltipPlacement}`;
-    tooltip.innerText = tooltipText;
-    document.body.appendChild(tooltip);
+    this.tooltip.innerText = tooltipText;
+    this.tooltip.className = `shy-tooltip shy-tooltip-${tooltipPlacement}`;
+    this.tooltip.style.visibility = 'visible';
 
     const rect = element.getBoundingClientRect();
-    const tooltipRect = tooltip.getBoundingClientRect();
+    const tooltipRect = this.tooltip.getBoundingClientRect();
 
     let top = 0;
     let left = 0;
@@ -68,23 +75,16 @@ class Tooltip {
         break;
     }
 
-    tooltip.style.top = `${top}px`;
-    tooltip.style.left = `${left}px`;
-
-    element.setAttribute('data-tooltip-id', tooltip.id);
+    this.tooltip.style.top = `${top}px`;
+    this.tooltip.style.left = `${left}px`;
   }
 
-  private hide(element: HTMLElement) {
+  private hide() {
     const SCOPE = 'hide';
     console.log(`[${TITLE}#${SCOPE}]`);
 
-    const tooltipId = element.getAttribute('data-tooltip-id');
-    if (tooltipId) {
-      const tooltip = document.getElementById(tooltipId);
-      if (tooltip) {
-        tooltip.remove();
-      }
-      element.removeAttribute('data-tooltip-id');
+    if (this.tooltip) {
+      this.tooltip.style.visibility = 'hidden';
     }
   }
 }
