@@ -1,9 +1,9 @@
-@import "../utils";
+@import "../utilities";
 
 .shy-modal {
   display: none;
   position: fixed;
-  z-index: 1050;
+  z-index: calc(1337 + 0);
   left: 0;
   top: 0;
   width: 100%;

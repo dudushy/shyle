@@ -21,7 +21,6 @@
 </head>
 
 <body>
-  <!-- CONTENT [START] -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="../">
@@ -92,21 +91,80 @@
     </div>
   </nav>
 
-  <main class="container my-5">
+  <main class="container py-4 px-3 mx-auto">
     <div class="col-auto">
-      <button class="shy-btn shy-modal-trigger">Open Modal</button>
+      <div class="row">
+        <button class="shy-btn mb-3" data-shy-modal-target="#shyModal1" data-shy-tooltip="Click me to open the modal" data-shy-tooltip-placement="bottom">
+          Open Modal 1
+        </button>
 
-      <div id="shyModal" class="shy-modal">
-        <div class="shy-modal-dialog">
-          <button class="shy-btn shy-modal-close">&times;</button>
-          <p class="shy-fs-5">This is a modal!</p>
+        <button class="shy-btn" data-shy-modal-target="#shyModal2" data-shy-tooltip="Click me to open the modal" data-shy-tooltip-placement="bottom">
+          Open Modal 2
+        </button>
+
+        <div id="shyModal1" class="shy-modal">
+          <div class="shy-modal-dialog">
+            <button class="shy-modal-close">&times;</button>
+            <p>This is modal 1!</p>
+          </div>
+        </div>
+
+        <div id="shyModal2" class="shy-modal">
+          <div class="shy-modal-dialog">
+            <button class="shy-modal-close">&times;</button>
+            <p>This is modal 2!</p>
+          </div>
         </div>
       </div>
 
-      <button class="shy-btn" data-tooltip-text="This is a tooltip!" data-tooltip-placement="right">Hover me</button>
+      <div class="row mt-4">
+        <div class="col-auto">
+          <button class="shy-btn shy-txt-bg-danger" data-shy-fs="0.5" data-shy-tooltip="This is a tooltip!">
+            Hover me
+          </button>
+        </div>
+
+        <div class="col-auto">
+          <button class="shy-btn shy-txt-bg-success" data-shy-fs="0.5" data-shy-tooltip="This is a tooltip!" data-shy-tooltip-placement="right">
+            Hover me (right)
+          </button>
+        </div>
+
+        <div class="col-auto">
+          <button class="shy-btn shy-txt-bg-warning" data-shy-fs="0.5" data-shy-tooltip="This is a tooltip!" data-shy-tooltip-placement="left">
+            Hover me (left)
+          </button>
+        </div>
+
+        <div class="col-auto">
+          <button class="shy-btn shy-txt-bg-light" data-shy-fs="0.5" data-shy-tooltip="This is a tooltip!" data-shy-tooltip-placement="bottom">
+            Hover me (bottom)
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <p data-shy-fs="-1" class="shy-txt-success">fs-n1</p>
+
+        <p data-shy-fs="1" class="shy-txt-primary">fs-1</p>
+
+        <p data-shy-fs="1.5" class="shy-txt-secondary">fs-1.5</p>
+
+        <p data-shy-fs="2" class="shy-txt-tertiary">fs-2</p>
+
+        <div class="row align-items-center">
+          <div class="col-auto me-auto">
+            <label for="customFontSize" class="col-form-label border shy-border-danger" id="customFontSize">fs-custom</label>
+          </div>
+
+          <div class="col-auto">
+            <input class="form-control" id="customFontSizeInput" data-shy-fs-target="#customFontSize" type="number" min="0.1" value="0.9">
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   </main>
-  <!-- CONTENT [END] -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

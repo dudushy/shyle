@@ -50,7 +50,7 @@ $breakpoints: (
 $shy-color-primary: #1eb5eb;
 $shy-color-secondary: #1bdbdc;
 $shy-color-tertiary: #bd42b7;
-$shy-color-light: #c5d0dc;
+$shy-color-light: #dfe5ec;
 $shy-color-medium: #4b4d5c;
 $shy-color-dark: #28283a;
 $shy-color-success: #28a745;
@@ -64,7 +64,7 @@ $shy-color-info: #17a2b8;
   --shy-color-primary: #1eb5eb;
   --shy-color-secondary: #1bdbdc;
   --shy-color-tertiary: #bd42b7;
-  --shy-color-light: #c5d0dc;
+  --shy-color-light: #dfe5ec;
   --shy-color-medium: #4b4d5c;
   --shy-color-dark: #28283a;
   --shy-color-success: #28a745;
@@ -72,27 +72,48 @@ $shy-color-info: #17a2b8;
   --shy-color-danger: #dc3545;
   --shy-color-info: #17a2b8;
 
+  // Dynamic height (default fallback)
+  --shy-dynamic-height: 100vh;
+
+  // Dynamic width (default fallback)
+  --shy-dynamic-width: 100vw;
+
   // Responsive unit
-  --shy-responsive-unit: calc(1vmin + 1vmax + 1rem);
+  --shy-responsive-unit-base: calc(1vmin + 1vmax + 1rem);
+  --shy-responsive-unit-multiplier: 1;
+  --shy-responsive-unit: calc(var(--shy-responsive-unit-base) * var(--shy-responsive-unit-multiplier));
 
   // Font family
   --shy-font-family: "Roboto", sans-serif;
 
-  // Dynamic height
+  // Supports: Dynamic height
   @supports (height: 100dvh) {
     --shy-dynamic-height: 100dvh;
   }
 
-  & {
-    --shy-dynamic-height: 100vh;
-  }
-
-  // Dynamic width
+  // Supports: Dynamic width
   @supports (width: 100dvw) {
     --shy-dynamic-width: 100dvw;
   }
 
-  & {
-    --shy-dynamic-width: 100vw;
+  // Media Queries: Responsive Unit Multiplier
+  @include breakpoint(sm) {
+    --shy-responsive-unit-multiplier: 1.1;
+  }
+
+  @include breakpoint(md) {
+    --shy-responsive-unit-multiplier: 1.2;
+  }
+
+  @include breakpoint(lg) {
+    --shy-responsive-unit-multiplier: 1.3;
+  }
+
+  @include breakpoint(xl) {
+    --shy-responsive-unit-multiplier: 1.4;
+  }
+
+  @include breakpoint(xxl) {
+    --shy-responsive-unit-multiplier: 1.5;
   }
 }

@@ -2,63 +2,71 @@ const TITLE = 'modal';
 
 interface ModalOptions {
   triggerSelector: string;
-  modalSelector: string;
   closeSelector: string;
 }
 
 class Modal {
   private triggerElements: NodeListOf<HTMLElement>;
-  private modal: HTMLElement | null;
-  private closeButton: HTMLElement | null;
+  private closeButtons: NodeListOf<HTMLElement>;
 
   constructor(options: ModalOptions) {
     const SCOPE = 'constructor';
     console.log(`[${TITLE}#${SCOPE}]`);
 
     this.triggerElements = document.querySelectorAll(options.triggerSelector);
-    this.modal = document.querySelector(options.modalSelector);
-    this.closeButton = document.querySelector(options.closeSelector);
+    this.closeButtons = document.querySelectorAll(options.closeSelector);
 
     this.bindEvents();
   }
 
+  // Bind events to open modals and close modals
   private bindEvents() {
     const SCOPE = 'bindEvents';
     console.log(`[${TITLE}#${SCOPE}]`);
 
+    // Bind open event to all trigger elements
     this.triggerElements.forEach(trigger => {
-      trigger.addEventListener('click', () => this.open());
+      const modalSelector = trigger.getAttribute('data-shy-modal-target');
+      const modal = modalSelector ? document.querySelector(modalSelector) : null;
+
+      if (modal) {
+        trigger.addEventListener('click', () => this.open(modal as HTMLElement));
+      }
     });
 
-    if (this.closeButton && this.modal) {
-      this.closeButton.addEventListener('click', () => this.close());
-    }
-
-    if (this.modal) {
-      window.addEventListener('click', (event) => {
-        if (event.target === this.modal) {
-          this.close();
+    // Bind close event to all close buttons
+    this.closeButtons.forEach(closeButton => {
+      closeButton.addEventListener('click', () => {
+        const modal = closeButton.closest('.shy-modal');
+        if (modal) {
+          this.close(modal as HTMLElement);
         }
       });
-    }
+    });
+
+    // Close modal when clicking outside of the modal content
+    window.addEventListener('click', (event) => {
+      const target = event.target as HTMLElement;
+      if (target.classList.contains('shy-modal')) {
+        this.close(target);
+      }
+    });
   }
 
-  private open() {
+  // Open the modal
+  private open(modal: HTMLElement) {
     const SCOPE = 'open';
-    console.log(`[${TITLE}#${SCOPE}]`);
+    console.log(`[${TITLE}#${SCOPE}]`, modal);
 
-    if (this.modal) {
-      this.modal.classList.add('shy-modal-open');
-    }
+    modal.classList.add('shy-modal-open');
   }
 
-  private close() {
+  // Close the modal
+  private close(modal: HTMLElement) {
     const SCOPE = 'close';
-    console.log(`[${TITLE}#${SCOPE}]`);
+    console.log(`[${TITLE}#${SCOPE}]`, modal);
 
-    if (this.modal) {
-      this.modal.classList.remove('shy-modal-open');
-    }
+    modal.classList.remove('shy-modal-open');
   }
 }
 
