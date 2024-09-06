@@ -23,7 +23,7 @@
 
 You can install Shyle in your project using either npm or a CDN.
 
-### 1. Via NPM:
+### 1. Via NPM [OUT OF ORDER]:
 
 Install Shyle using npm to include it as a dependency in your project:
 
@@ -52,7 +52,7 @@ Include Shyle directly from a CDN in your HTML file:
 Shyle provides a range of CSS classes to style your components. Here’s a basic example:
 
 ```html
-<button class="btn">Button</button>
+<button class="shy-btn">Button</button>
 ```
 
 ### 2. JavaScript
@@ -79,7 +79,7 @@ Shyle includes interactive components like Modals and Tooltips. To use them, inc
 
 ```html
 <!-- Tooltip Example -->
-<button class="btn" data-tooltip="This is a tooltip!">Hover me</button>
+<button class="shy-btn" data-tooltip="This is a tooltip!">Hover me</button>
 ```
 
 The modal and tooltip components are automatically initialized when the DOM is loaded. You can customize their behavior by modifying the data attributes or extending the JavaScript classes provided in the `src/js/components` directory.
